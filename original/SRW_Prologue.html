@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Star Rail Wars - Prologue</title>
+  <style>
+    body {
+      background-color: #0a0a0a;
+      color: #e0e0e0;
+      font-family: 'Courier New', monospace;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      padding-top: 10px;
+      background-image: 
+        radial-gradient(circle at 25% 25%, rgba(30, 30, 30, 0.8) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(40, 40, 40, 0.6) 0%, transparent 50%);
+    }
+    
+    nav {
+      background-color: rgba(15, 15, 15, 0.9);
+      padding: 10px 0;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #333;
+    }
+
+    .nav-title {
+      color: #a0a0ff;
+      font-size: 24px;
+      font-weight: bold;
+      padding-left: 20px;
+      text-shadow: 0 0 10px rgba(160, 160, 255, 0.3);
+    }
+
+    .nav-links {
+      display: flex;
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      gap: 10px;
+      padding-right: 20px;
+    }
+
+    .nav-links a {
+      color: #a0a0ff;
+      text-decoration: none;
+      padding: 8px 12px;
+    }
+
+    .hamburger {
+      display: none;
+    }
+
+    h2, h4, h3 {
+      margin: 0.5em 0;
+    }
+
+    .button-container {
+      margin: 20px 0;
+    }
+
+    button {
+      background-color: #1f1f1f;
+      color: #a0a0ff;
+      border: 1px solid #555;
+      width: 90%;
+      height: 50px;
+      font-family: inherit;
+      cursor: pointer;
+      border-radius: 0;
+    }
+
+    .content-box {
+      padding: 15px;
+      margin: 120px auto 30px;
+      background-color: #1c1c1c;
+      border-radius: 0px;
+      max-width: 900px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    blockquote {
+      background: #222;
+      border-left: 4px solid #a0a0ff;
+      margin: 20px auto;
+      padding: 10px 20px;
+      max-width: 700px;
+    }
+
+    details {
+      background-color: rgba(0, 0, 0, 0.3);
+      padding: 1rem;
+      border-radius: 0px;
+      margin-bottom: 1rem;
+      cursor: pointer;
+      text-align: left;
+    }
+
+    summary {
+      font-weight: bold;
+      color: #a0a0ff;
+      cursor: pointer;
+    }
+
+    .navigation {
+      margin-top: 2rem;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-button {
+      background-color: #333;
+      color: #fff;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 0px;
+      cursor: pointer;
+      margin-top: 10px;
+      text-decoration: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      background-color: rgba(10, 10, 10, 0.8);
+    }
+
+    footer a {
+      color: #a0a0ff;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hamburger {
+        display: block;
+        font-size: 24px;
+        color: #a0a0ff;
+        padding-right: 20px;
+        cursor: pointer;
+      }
+
+      .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        right: 0;
+        width: 100%;
+        background-color: rgba(15, 15, 15, 0.95);
+      }
+
+      .nav-links li {
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <span class="nav-title">SRYAA</span>
+    <ul class="nav-links">
+      <li><a href="/sryaa-verikava/navibar/credits.html">Credit</a></li>
+      <li><a href="/sryaa-verikava/navibar/supporter.html">Supporter</a></li>
+    </ul>
+  </nav>
+<br>
+  <br>
+  <blockquote>
+    <strong>NOTE:</strong><br>
+    STAR RAIL WARS - WORK IN PROGRESS<br>
+    Terinspirasi dari Galaxy Railways & Honkai: Star Rail.
+  </blockquote>
+
+  <div class="content-box">
+    <h1>Star Rail Wars [ID]</h1>
+    <h2>PROLOGUE</h2>
+    <p>Pada Tahun 3246 Amber Era, manusia mulai melakukan eksplorasi luar angkasa dan kolonisasi di berbagai bintang, di luar angkasa sana terdapat sebuah jalur jalur rel magnet yang membentang jutaan tahun cahaya, dan jalur jalur ini saling tumpag tindih, tapi itu hanya berlaku untuk jalur jalur milik "Transgalactic Star Railways [TSR]", karena memiliki 25 rute yang saling berbagi dengan satu jalur yang bernama "The StoneHearts Rail" tidak seperti "Rail Defense Association [RDA]" yang dimana memiliki jalur bernama "The Amethyst Rails" dan jalur itu hanya berhenti di setasiun kendali yang mengaruskan penumpangya membeli tiket dua kali karena kereta mereka harus berhenti di sebuah setasiun luar angkasa atau hub milik RDA, </p>
+
+    <h3>DETAIL FRAKSI</h3>
+
+    <details>
+      <summary>Transgalactic Star Railways [TSR]</summary>
+      <p>TSR adalah aliansi tertua dan paling terorganisir. Mereka menjaga kestabilan ekonomi galaksi melalui pengelolaan <em>The StoneHearts Rail</em>.</p>
+    </details>
+
+    <details>
+      <summary>Rail Defense Association [RDA]</summary>
+      <p>RDA adalah organisai pertahanan dan keamanan, yang diamana dilengkapi oleh persenjataan legkap, dan pemilik jalur penumpang yang bernama <em>The Amethyst Rails</em></p>
+    </details>
+
+    <details>
+      <summary>Free Railway Coalition [FRC]</summary>
+      <p>FRC berada di bawah naungan TSR dan bertugas melindungi infrastruktur The StoneHearts Rail serta mengembangkan <em>The Azure Loop</em>.</p>
+    </details>
+
+    <h2>Sebuah Ketegangan yang Mulai Menguat</h2>
+    <p>Ketika RDA mengajukan permohonan agar <em>The StoneHearts Rail</em> dikendalikan militer dan ditolak TSR, ketegangan pun memuncak...</p>
+
+    <div class="navigation">
+      <a href="/sryaa-verikava/" class="footer-button">&laquo; Kembali</a>
+      <a href="/sryaa-verikava/original/err.html" class="footer-button">Chapter Selanjutnya &raquo;</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>2025, hak cipta sesuai lisensi MIT</p>
+  </footer>
+</body>
+</html>
