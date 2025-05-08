@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta name="description" content="Situs resmi Srya Verikava. Menampilkan karya fiksi orisinal seperti STAR RAIL WARS, THE HEALER OF JIAOQIU, dan lainnya.">
+  <meta name="author" content="Srya Verikava">
+  <meta property="og:title" content="Srya Verikava Sites">
+  <meta property="og:description" content="Kumpulan karya fiksi original dari SryAa, website ini digunakan untuk menunjukkan bagaimana SryAa Merespon Temannya yang telah menghinanya sebagai orang bodoh">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sryaarf.github.io/sryaa-verikava/">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Srya Verikava Sites</title>
+  <style>
+    /* Style untuk Body */
+    body {
+      background-color: #0a0a0a;
+      color: #e0e0e0;
+      font-family: 'Courier New', monospace;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      background-image:
+  radial-gradient(circle at 25% 25%, rgba(30, 30, 30, 0.8) 0%, transparent 50%),
+  radial-gradient(circle at 75% 75%, rgba(40, 40, 40, 0.6) 0%, transparent 50%);
+
+    }
+
+    nav {
+      background-color: rgba(15, 15, 15, 0.9);
+      padding: 10px 0;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #333;
+    }
+
+    .nav-title {
+      color: #a0a0ff;
+      font-size: 24px;
+      font-weight: bold;
+      padding-left: 20px;
+      text-shadow: 0 0 10px rgba(160, 160, 255, 0.3);
+    }
+
+    .nav-links {
+      display: flex;
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      gap: 10px;
+      padding-right: 20px;
+    }
+
+    .nav-links a {
+      color: #a0a0ff;
+      text-decoration: none;
+      padding: 8px 12px;
+    }
+
+    .hamburger {
+      display: none;
+    }
+
+    h2, h4 {
+      margin: 0.5em 0;
+    }
+
+    .button-container {
+      margin: 20px 0;
+    }
+
+    button {
+      background-color: #1f1f1f;
+      color: #a0a0ff;
+      border: 1px solid #555;
+      width: 90%;
+      height: 50px;
+      font-family: inherit;
+      cursor: pointer;
+      border-radius: 0;
+      transition: transform 0.2s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #2c2c2c;
+      transform: scale(1.03);
+      box-shadow: 0 0 10px rgba(160, 160, 255, 0.3);
+    }
+
+    .content-box {
+      display: none;
+      padding: 15px;
+      margin: 10px auto;
+      background-color: #1c1c1c;
+      border-radius: 0px;
+      max-width: 80%;
+    }
+
+    .content-box.show {
+      display: block;
+    }
+
+    blockquote {
+      background: #222;
+      border-left: 4px solid #a0a0ff;
+      margin: 20px auto;
+      padding: 10px 20px;
+      max-width: 700px;
+    }
+
+    pre, code {
+      background-color: #111;
+      padding: 5px;
+      border-radius: 0px;
+      color: #ffffff;
+    }
+
+    table {
+      margin: 10px auto;
+      border-collapse: collapse;
+      width: 90%;
+    }
+
+    th, td {
+      border: 1px solid #333;
+      padding: 10px;
+      text-align: center;
+    }
+
+    footer {
+      margin-top: 40px;
+      padding: 20px;
+      font-size: 14px;
+      background-color: rgba(10, 10, 10, 0.8);
+    }
+
+    .footer-button {
+      background-color: #333;
+      color: #fff;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 0px;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: transform 0.2s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .footer-button:hover {
+      background-color: #444;
+      transform: scale(1.03);
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hamburger {
+        display: block;
+        font-size: 24px;
+        color: #a0a0ff;
+        padding-right: 20px;
+        cursor: pointer;
+      }
+
+      .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        right: 0;
+        width: 100%;
+        background-color: rgba(15, 15, 15, 0.95);
+      }
+
+      .nav-links li {
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+      }
+    }
+
+    .update-container {
+      max-width: 800px;
+      margin: 80px auto 40px auto;
+      padding: 20px;
+      background-color: #1c1c1c;
+      border-left: 4px solid #a0a0ff;
+      text-align: left;
+      overflow-y: scroll; /* Menambahkan scroll */
+      height: 300px; /* Atur sesuai kebutuhan */
+    }
+
+    .update-item {
+      margin-bottom: 30px;
+    }
+
+    .update-item h3 {
+      color: #a0a0ff;
+      margin-bottom: 5px;
+    }
+
+    .update-item p {
+      margin: 5px 0;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 3px 8px;
+      font-size: 12px;
+      background-color: #333;
+      color: #a0a0ff;
+      border-radius: 0px;
+      margin-right: 5px;
+    }
+
+    a {
+      color: #a0a0ff;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+<!-- Bar Navigasi -->
+  <nav>
+    <span class="nav-title">SRYAA</span>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <ul class="nav-links">
+      <li><a href="https://sryaarf.github.io/sryaa-verikava/navibar/credits.html">Credit</a></li>
+      <li><a href="https://sryaarf.github.io/sryaa-verikava/navibar/supporter.html">Supporter</a></li>
+      <li><a href="https://sryaarf.github.io/sryaa-verikava/original/wip.html">NSFW Area (18+ only)</a></li>
+    </ul>
+  </nav>
+
+  <div style="padding-top: 60px;">
+    <strong><h2>Selamat datang di website resmi Sryaa-VeriKava</h2></strong>
+    <p>Selamat datang di Website ku <strong>"Srya Verikava"</strong></p> <br><br>
+    <p>Website ini dibuat dibawah kendali Sunday Creative Place, dan akan mempublikasikan karya karya dari SRY-ILLA II & SryA Verikava<br>
+    Website ini juga adalah website kembangan satu orang yaitu Dikembangkan Oleh "SryA Verikava" Kalian Bisa mengunjungi Repositori nya melalui link <a href="https://github.com/drathaivehzuuryaaajyaqiuuu/sryaa-verikava">Repositori Github</a></p>
+<br> <br>
+    <h4>Update Notes</h4>
+  <p>Catatan pembaruan dan perbaikan terbaru di situs <strong>Srya Verikava</strong></p>
+
+  <div class="update-container">
+
+    <div class="update-item">
+      <h3>[2025-04-21] NSFW Mode Ditambahkan</h3>
+      <span class="tag">NEW</span>
+      <span class="tag">FEATURE</span>
+      <p>Menambahkan Mode NSFW atau Area Dewasa, Yang dimana Akan memiliki menu lebih sensitif dan berisi karya milikku dan milik JAFeix!</p>
+    </div>
+    
+    <div class="update-item">
+      <h3>[2025-04-19] Penambahan Halaman Update Notes</h3>
+      <span class="tag">NEW</span>
+      <span class="tag">SYSTEM</span>
+      <p>Menambahkan halaman khusus ini untuk mencatat perubahan dan pembaruan konten ke depannya.</p>
+    </div>
+
+    <div class="update-item">
+      <h3>[2025-04-09] Tambahan Konten SRW</h3>
+      <span class="tag">UPDATE</span>
+      <span class="tag">SRW</span>
+      <p>Menambahkan detail prolog STAR RAIL WARS dan episode pertama. Konten saat ini masih dalam status <code>Rework</code>.</p>
+    </div>
+    
+    <div class="update-item">
+      <h3>[2025-03-30] Initial Launch</h3>
+      <span class="tag">NEW</span>
+      <span class="tag">FEATURE</span>
+      <p>Halaman utama "Srya Verikava Sites" telah resmi dirilis dengan navigasi responsif, desain latar futuristik, dan konten awal untuk proyek STAR RAIL WARS, THJ, dan STBD.</p>
+    </div>
+    
+  </div>
+    
+    <blockquote>
+      <p><strong>[IMPORTANT]</strong><br>
+      Karya ini bukanlah karya kolaboratif. <code>BUKAN KARYA KOLABORATIF</code>, karena ini adalah karya buatanku.</p>
+    </blockquote>
+
+    <strong><h4>Kreasi [HANYA BERBAHASA INDONESIA]</h4></strong>
+    <p>Daftar semua karya yang dibuat berdasarkan permintaan:</p>
+    <p>Selain Itu kalian bisa melakukan request tentang sesuatu (untuk Hal yang berbau Yaoi/yuri akan aku pisah dalam navigasi terpisah) dan usahakan sertakan karakter yang terlibat</p>
+    <pre><code>Request bisa dikirim melalui credits di bawah kreasi.</code></pre>
+
+    <blockquote>
+      <p><strong>[CAUTION]</strong><br>
+      Karya ini tidak terjadi di dunia nyata dan tidak bermaksud menyinggung pihak mana pun.</p>
+    </blockquote>
+
+    <!-- Konten-konten dengan tombol -->
+    <div class="button-container"><button onclick="toggleSRW()">STAR RAIL WARS</button></div>
+    <div id="srwContent" class="content-box">
+      <h4>STAR RAIL WARS - !!ONGOING!!</h4>
+      <p>Menceritakan tentang konflik antara <strong>TSR</strong> dan <strong>RDA</strong> dalam pengelolaan The StoneHarts Rails.</p>
+      <blockquote><p><strong>[NOTE]</strong><br>Karya ini terinspirasi dari <code>Galaxy Railways</code> dan <code>Honkai: Star Rail</code>.</p></blockquote>
+      <a href="./original/err.html" target="_blank"><button>Baca Sekarang (!!PREMIERE!!)</button></a>
+      <hr>
+      <h4>Daftar Isi</h4>
+      <table>
+        <thead><tr><th>No.</th><th>Episode | Title</th><th>Release Date</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td><button onclick="window.location.href='./original/err.html'">00|The Prologue</button></td><td>Delayed</td><td>Rework</td></tr>
+          <tr><td>2</td><td><button onclick="window.location.href='./original/err.html'">01|The Silver Rails Myth</button></td><td>TBA</td><td>WIP</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <hr>
+    <div class="button-container"><button onclick="toggleTHJ()">THE HEALER OF JIAOQIU</button></div>
+    <div id="thjContent" class="content-box">
+      <h4>THE HEALER OF JIAOQIU - WORK IN PROGRESS</h4>
+      <p>Menceritakan seseorang bernama <strong>Jiaoqiu</strong> dari <code>yaoqing military</code> sebagai healer.</p>
+      <blockquote><p><strong>[NOTE]</strong><br>Candaan belaka, tidak ada hubungan dengan <code>HSR</code>.</p></blockquote>
+      <a href="./original/err.html" target="_blank"><button>Baca Sekarang</button></a>
+      <hr>
+      <h4>Daftar Isi</h4>
+      <table>
+        <thead><tr><th>No.</th><th>Episode | Title</th><th>Release Date</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td><button onclick="window.location.href='./original/err.html'">00|The Prologue</button></td><td>TBA</td><td>WIP</td></tr>
+          <tr><td>2</td><td><button onclick="window.location.href='./original/err.html'">01|The Yaoqing Healer</button></td><td>TBA</td><td>WIP</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <hr>
+    <div class="button-container"><button onclick="toggleSTBD()">SUNDAY IS THE BEST DAY</button></div>
+    <div id="stbdContent" class="content-box">
+      <h4>SUNDAY IS THE BEST DAY - WORK IN PROGRESS</h4>
+      <p>Menceritakan <strong>Sunday</strong> dari <code>The Order</code>.</p>
+      <blockquote><p><strong>[NOTE]</strong><br>Semua hanyalah khayalan belaka, tidak terkait <code>HSR</code>.</p></blockquote>
+      <a href="./original/err.html" target="_blank"><button>Baca Sekarang</button></a>
+      <hr>
+      <h4>Daftar Isi</h4>
+      <table>
+        <thead><tr><th>No.</th><th>Episode | Title</th><th>Release Date</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td><button onclick="window.location.href='./original/err.html'">00|The Prologue</button></td><td>TBA</td><td>WIP</td></tr>
+          <tr><td>2</td><td><button onclick="window.location.href='./original/err.html'">01|The Order</button></td><td>TBA</td><td>WIP</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <footer>
+    <p>Situs ini dibuat oleh saya dan dipoles dengan bantuan ChatGPT<br>
+    website ini ditopang oleh GitHub.</p>
+    <a href="https://github.com/join" target="_blank" rel="noopener noreferrer">
+      <button class="footer-button">Bergabung ke GitHub dan Upload Kode Menarikmu Secara Gratis!!</button>
+    </a>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.querySelector('.nav-links').classList.toggle('active');
+    }
+  
+    function toggleContent(id) {
+      const el = document.getElementById(id);
+      el.classList.toggle('show');
+    }
+
+    function toggleSRW() { toggleContent('srwContent'); }
+    function toggleTHJ() { toggleContent('thjContent'); }
+    function toggleSTBD() { toggleContent('stbdContent'); }
+  </script>
+</body>
+</html>
