@@ -1,4 +1,3 @@
-## WILL MOVED SOON!!
 
 <img src=sunday.jpg>
 <hr>
