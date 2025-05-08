@@ -1,2 +1,0 @@
-# sryaarf-sites
-Github Page :)
