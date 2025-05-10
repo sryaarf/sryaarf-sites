@@ -1,54 +1,80 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Daftar Supporter</title>
-  <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap" rel="stylesheet">
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
       background-color: #0a0a0a;
       color: #e0e0e0;
       font-family: 'Courier New', monospace;
-      margin: 0;
-      padding: 0;
       text-align: center;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
       background-image:
-        radial-gradient(circle at 25% 25%, rgba(30, 30, 30, 0.8) 0%, transparent 50%),
-        radial-gradient(circle at 75% 75%, rgba(40, 40, 40, 0.6) 0%, transparent 50%);
+        radial-gradient(circle at 25% 25%, rgba(0, 255, 231, 0.05), transparent 60%),
+        radial-gradient(circle at 75% 75%, rgba(0, 255, 231, 0.03), transparent 60%);
+    }
+
+    header {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 16px;
+      font-size: 1.6rem;
+      color: #00ffe7;
+      font-weight: bold;
+      width: 70%;
+      margin: auto;
+      margin-top: 20px;
+      border-bottom: 2px solid #00ffe7;
+    }
+
+    main {
+      flex: 1;
+      padding: 20px;
+      width: 70%;
+      margin: auto;
     }
 
     h2, h3, h4, strong {
-      color: #a0a0ff;
-      margin: 0.5em 0;
+      color: #00ffe7;
+      margin: 1.5em 0 0.5em;
     }
 
     table {
-      width: 90%;
-      margin: 20px auto;
+      width: 100%;
+      margin: 20px auto 40px;
       border-collapse: collapse;
-      background-color: #1c1c1c;
+      background-color: rgba(255, 255, 255, 0.03);
+      border: 1px solid #00ffe7;
     }
 
     th, td {
-      padding: 10px;
+      padding: 12px 15px;
       text-align: left;
       font-size: 0.95em;
-      border-bottom: 1px solid #333;
+      border-bottom: 1px solid #1c1c1c;
     }
 
     tr:nth-child(even) {
-      background-color: rgba(160, 160, 255, 0.05);
+      background-color: rgba(0, 255, 231, 0.05);
     }
 
     tr:hover {
-      background-color: rgba(160, 160, 255, 0.2);
+      background-color: rgba(0, 255, 231, 0.1);
     }
 
     button {
-      background-color: rgba(160, 160, 255, 0.1);
-      color: #a0a0ff;
-      border: 2px solid #a0a0ff;
+      background-color: rgba(0, 255, 231, 0.1);
+      color: #00ffe7;
+      border: 2px solid #00ffe7;
       padding: 12px 20px;
       margin: 24px auto;
       cursor: pointer;
@@ -56,46 +82,60 @@
       font-family: 'Courier New', monospace;
       font-weight: bold;
       display: block;
-      width: 500px;
+      width: 70%;
       text-align: center;
       transition: all 0.3s ease;
     }
 
     button:hover {
-      background-color: rgba(160, 160, 255, 0.2);
-      border-color: #8f8fff;
+      background-color: rgba(0, 255, 231, 0.2);
+      border-color: #00ffe7;
       transform: translateY(-3px);
     }
 
     a {
-      color: #a0a0ff;
+      color: #00ffe7;
       text-decoration: none;
+    }
+
+    footer {
+      background: rgba(0, 0, 0, 0.7);
+      text-align: center;
+      padding: 15px;
+      color: white;
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
-  <h2>Daftar Supporter</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Kedudukan</th>
-        <th>Nama</th>
-        <th>Departemen</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td>-</td><td>Ryugusora</td><td>Thechnology Departement</td></tr>
-      <tr><td>-</td><td>Iruki Saeki</td><td>-</td></tr>
-      <tr><td>-</td><td>Willoiz Citron</td><td>-</td></tr>
-      <tr><td>-</td><td>Kevin Vilyan</td><td>-</td></tr>
-      <tr><td>-</td><td>ItzMarzu</td><td>-</td></tr>
-      <tr><td>-</td><td>Noone</td><td>-</td></tr>
-      <tr><td>-</td><td>TnmSpiroct</td><td>-</td></tr>
-    </tbody>
-  </table>
+  <header>Daftar Supporter</header>
+  <main>
+    <table>
+      <thead>
+        <tr>
+          <th>Kedudukan</th>
+          <th>Nama</th>
+          <th>Departemen</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>-</td><td>Ryugusora</td><td>Technology Department</td></tr>
+        <tr><td>-</td><td>Iruki Saeki</td><td>-</td></tr>
+        <tr><td>-</td><td>Willoiz Citron</td><td>-</td></tr>
+        <tr><td>-</td><td>Kevin Vilyan</td><td>-</td></tr>
+        <tr><td>-</td><td>ItzMarzu</td><td>-</td></tr>
+        <tr><td>-</td><td>Noone</td><td>-</td></tr>
+        <tr><td>-</td><td>TnmSpiroct</td><td>-</td></tr>
+      </tbody>
+    </table>
 
-  <a href="https://sryaarf.github.io/sryaa-verikava/">
-    <button>Kembali ke Halaman Utama</button>
-  </a>
+    <a href="/sryaarf-sites/">
+      <button>Kembali ke Halaman Utama</button>
+    </a>
+  </main>
+
+  <footer>
+    &copy; 2025 Srya-Verikava. All Rights Reserved.
+  </footer>
 </body>
 </html>
