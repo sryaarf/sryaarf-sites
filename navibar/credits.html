@@ -5,144 +5,195 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Credit Page</title>
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
       background-color: #0a0a0a;
       color: #e0e0e0;
       font-family: 'Courier New', monospace;
-      margin: 0;
-      padding: 0;
-      text-align: center;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       background-image:
-        radial-gradient(circle at 25% 25%, rgba(30, 30, 30, 0.8) 0%, transparent 50%),
-        radial-gradient(circle at 75% 75%, rgba(40, 40, 40, 0.6) 0%, transparent 50%);
+        radial-gradient(circle at 25% 25%, rgba(0, 255, 231, 0.05), transparent 60%),
+        radial-gradient(circle at 75% 75%, rgba(0, 255, 231, 0.03), transparent 60%);
     }
 
-    h2, h3, h4, strong {
-      color: #a0a0ff;
-      margin: 0.5em 0;
+    header {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 16px;
+      font-size: 1.6rem;
+      color: #00ffe7;
+      font-weight: bold;
+      width: 70%;
+      text-align: center;
+    }
+
+    main {
+      flex: 1;
+      padding: 20px;
+      width: 70%;
+    }
+
+    .section {
+      border: 1px solid #00ffe7;
+      margin-bottom: 15px;
+      background-color: rgba(255, 255, 255, 0.03);
+    }
+
+    .section-header {
+      padding: 12px;
+      cursor: pointer;
+      background-color: rgba(0, 255, 231, 0.1);
+      color: #00ffe7;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .section-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, opacity 0.4s ease;
+      opacity: 0;
+      padding: 0 12px;
+    }
+
+    .section.open .section-content {
+      max-height: 1000px;
+      opacity: 1;
+      padding: 12px;
+    }
+
+    .arrow {
+      transition: transform 0.3s ease;
+    }
+
+    .section.open .arrow {
+      transform: rotate(90deg);
     }
 
     table {
-      width: 90%;
-      margin: 20px auto;
+      width: 100%;
       border-collapse: collapse;
-      background-color: #1c1c1c;
+      margin-top: 10px;
     }
 
     th, td {
       padding: 10px;
       text-align: left;
-      font-size: 0.95em;
-      border-bottom: 1px solid #333;
-    }
-
-    tr:nth-child(even) {
-      background-color: rgba(160, 160, 255, 0.05);
-    }
-
-    tr:hover {
-      background-color: rgba(160, 160, 255, 0.2);
+      border-bottom: 1px solid #1c1c1c;
     }
 
     button {
-      background-color: rgba(160, 160, 255, 0.1);
-      color: #a0a0ff;
-      border: 2px solid #a0a0ff;
-      padding: 10px 16px;
-      margin: 8px auto;
+      background-color: rgba(0, 255, 231, 0.1);
+      color: #00ffe7;
+      border: 2px solid #00ffe7;
+      padding: 8px 14px;
+      margin: 6px 0;
       cursor: pointer;
       font-size: 14px;
-      display: inline-block;
-      width: 160px;
-      text-align: center;
-      transition: all 0.3s ease;
+      transition: 0.3s;
     }
 
     button:hover {
-      background-color: rgba(160, 160, 255, 0.2);
-      border-color: #8f8fff;
-      transform: translateY(-3px);
+      background-color: rgba(0, 255, 231, 0.2);
+      transform: translateY(-2px);
     }
 
-    a {
-      color: #a0a0ff;
-      text-decoration: none;
+    footer {
+      background: rgba(0, 0, 0, 0.7);
+      text-align: center;
+      padding: 15px;
+      color: white;
+      font-size: 0.9rem;
+      width: 100%;
     }
   </style>
 </head>
 <body>
-  <h2>Credit</h2>
-  <table>
-    <tr>
-      <td><strong>Pengembang:</strong> SryAa Verikava</td>
-      <td><a href="https://github.com/sryaarf" target="_blank"><button>GitHub</button></a></td>
-    </tr>
-    <tr>
-      <td><strong>Bantuan Teknis:</strong> ChatGPT</td>
-      <td><a href="https://openai.com/chatgpt" target="_blank"><button>ChatGPT</button></a></td>
-    </tr>
-    <tr>
-      <td><strong>Hosting:</strong> GitHub Pages</td>
-      <td><a href="https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site" target="_blank"><button>GitHub Pages</button></a></td>
-    </tr>
-  </table>
+  <header>Srya-Verikava - Credit Page</header>
 
-  <h3>Ucapan Terima Kasih</h3>
-  <table>
-    <tr><td><strong>Kontributor & Pendukung:</strong></td></tr>
-    <tr><td>- SryAa Verikava (Pengembang Utama)</td></tr>
-    <tr><td>- Komunitas Discord</td></tr>
-    <tr><td>- OpenAI (ChatGPT untuk bantuan teknis)</td></tr>
-    <tr><td>- Para pengguna yang telah memberikan masukan dan saran</td></tr>
-  </table>
+  <main>
+    <div class="section">
+      <div class="section-header" onclick="toggleSection(this)">Credit <span class="arrow">▶</span></div>
+      <div class="section-content">
+        <table>
+          <tr><td><strong>Pengembang:</strong> SryAa Verikava</td><td><a href="https://github.com/sryaarf" target="_blank"><button>GitHub</button></a></td></tr>
+          <tr><td><strong>Bantuan Teknis:</strong> ChatGPT</td><td><a href="https://openai.com/chatgpt" target="_blank"><button>ChatGPT</button></a></td></tr>
+          <tr><td><strong>Hosting:</strong> GitHub Pages</td><td><a href="https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site" target="_blank"><button>GitHub Pages</button></a></td></tr>
+        </table>
+      </div>
+    </div>
 
-  <h3>Inspirasi Konten</h3>
-  <table>
-    <tr>
-      <td>Galaxy Railways</td>
-      <td><a href="https://en.wikipedia.org/wiki/The_Galaxy_Railways" target="_blank"><button>Kunjungi</button></a></td>
-    </tr>
-    <tr>
-      <td>Honkai: Star Rail</td>
-      <td ><a href="https://hsr.hoyoverse.com/" target="_blank"><button>Install</button></a></td>
-    </tr>
-  </table>
+    <div class="section">
+      <div class="section-header" onclick="toggleSection(this)">Ucapan Terima Kasih <span class="arrow">▶</span></div>
+      <div class="section-content">
+        <table>
+          <tr><td><strong>Kontributor & Pendukung:</strong></td></tr>
+          <tr><td>- SryAa Verikava (Pengembang Utama)</td></tr>
+          <tr><td>- Komunitas Discord</td></tr>
+          <tr><td>- OpenAI (ChatGPT untuk bantuan teknis)</td></tr>
+          <tr><td>- Para pengguna yang telah memberikan masukan dan saran</td></tr>
+        </table>
+      </div>
+    </div>
 
-  <h3>Kedudukan IPC (Interastral Peace Corporation)</h3>
-  <table>
-    <thead>
-      <tr>
-        <th>Kedudukan</th>
-        <th>Nama</th>
-        <th>Cabang</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>P48-P50</td>
-        <td>SryAa Verikava</td>
-        <td>Strategic Investment Department</td>
-      </tr>
-      <tr><td>P47</td><td>-</td><td>-</td></tr>
-      <tr><td>P46</td><td>-</td><td>-</td></tr>
-      <tr><td>P45</td><td>-</td><td>-</td></tr>
-      <tr><td>P44</td><td>-</td><td>-</td></tr>
-      <tr><td>P40</td><td>-</td><td>-</td></tr>
-    </tbody>
-  </table>
+    <div class="section">
+      <div class="section-header" onclick="toggleSection(this)">Inspirasi Konten <span class="arrow">▶</span></div>
+      <div class="section-content">
+        <table>
+          <tr><td>Galaxy Railways</td><td><a href="https://en.wikipedia.org/wiki/The_Galaxy_Railways" target="_blank"><button>Kunjungi</button></a></td></tr>
+          <tr><td>Honkai: Star Rail</td><td><a href="https://hsr.hoyoverse.com/" target="_blank"><button>Install</button></a></td></tr>
+        </table>
+      </div>
+    </div>
 
-  <h3>Kontribusi</h3>
-  <table>
-    <tr>
-      <td>Kirim Saran Mu di Server Discord</td>
-      <td><a href="https://discord.gg/yourserver" target="_blank"><button>Saran Karya Discord</button></a></td>
-    </tr>
-    <tr>
-      <td>Kontribusi Melalui Github</td>
-      <td><a href="https://github.com/sryaarf/sryaa-verikava/pulls" target="_blank"><button>Buat Pull Request</button></a></td>
-    </tr>
-  </table>
+    <div class="section">
+      <div class="section-header" onclick="toggleSection(this)">Kedudukan IPC <span class="arrow">▶</span></div>
+      <div class="section-content">
+        <table>
+          <thead><tr><th>Kedudukan</th><th>Nama</th><th>Cabang</th></tr></thead>
+          <tbody>
+            <tr><td>P48-P50</td><td>SryAa Verikava</td><td>Strategic Investment Department</td></tr>
+            <tr><td>P47</td><td>-</td><td>-</td></tr>
+            <tr><td>P46</td><td>-</td><td>-</td></tr>
+            <tr><td>P45</td><td>-</td><td>-</td></tr>
+            <tr><td>P44</td><td>-</td><td>-</td></tr>
+            <tr><td>P40</td><td>-</td><td>-</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
 
-  <a href="https://sryaarf.github.io/sryaa-verikava/"><button>Kembali ke Halaman Utama</button></a>
+    <div class="section">
+      <div class="section-header" onclick="toggleSection(this)">Kontribusi <span class="arrow">▶</span></div>
+      <div class="section-content">
+        <table>
+          <tr><td>Kirim Saran Mu di Server Discord</td><td><a href="https://discord.gg/yourserver" target="_blank"><button>Saran Karya Discord</button></a></td></tr>
+          <tr><td>Kontribusi Melalui Github</td><td><a href="https://github.com/sryaarf/sryaa-verikava/pulls" target="_blank"><button>Buat Pull Request</button></a></td></tr>
+        </table>
+      </div>
+    </div>
+
+    <a href="/sryaarf-sites/"><button>Kembali ke Halaman Utama</button></a>
+  </main>
+
+  <footer>
+    &copy; 2025 Srya-Verikava. All Rights Reserved.
+  </footer>
+
+  <script>
+    function toggleSection(element) {
+      const section = element.parentElement;
+      section.classList.toggle("open");
+    }
+  </script>
 </body>
 </html>
