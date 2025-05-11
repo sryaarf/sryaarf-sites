@@ -15,10 +15,10 @@
       background-color: #0a0a0a;
       color: #e0e0e0;
       font-family: 'Courier New', monospace;
+      text-align: center;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      align-items: center;
       background-image:
         radial-gradient(circle at 25% 25%, rgba(0, 255, 231, 0.05), transparent 60%),
         radial-gradient(circle at 75% 75%, rgba(0, 255, 231, 0.03), transparent 60%);
@@ -31,52 +31,54 @@
       color: #00ffe7;
       font-weight: bold;
       width: 70%;
-      text-align: center;
+      margin: 0 auto;
     }
 
     main {
       flex: 1;
       padding: 20px;
       width: 70%;
+      margin: auto;
     }
 
     .section {
       border: 1px solid #00ffe7;
-      margin-bottom: 15px;
       background-color: rgba(255, 255, 255, 0.03);
+      margin-bottom: 20px;
+      text-align: left;
     }
 
     .section-header {
-      padding: 12px;
-      cursor: pointer;
-      background-color: rgba(0, 255, 231, 0.1);
+      background-color: rgba(0, 0, 0, 0.5);
       color: #00ffe7;
+      padding: 10px 16px;
+      cursor: pointer;
+      position: relative;
       font-weight: bold;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    }
+
+    .section-header::after {
+      content: '\25BC';
+      position: absolute;
+      right: 16px;
+      transition: transform 0.3s ease;
+    }
+
+    .section-header.active::after {
+      transform: rotate(-180deg);
     }
 
     .section-content {
       max-height: 0;
       overflow: hidden;
-      transition: max-height 0.4s ease, opacity 0.4s ease;
-      opacity: 0;
-      padding: 0 12px;
+      transition: max-height 0.5s ease;
+      padding: 0 16px;
     }
 
-    .section.open .section-content {
+    .section-content.open {
       max-height: 1000px;
-      opacity: 1;
-      padding: 12px;
-    }
-
-    .arrow {
-      transition: transform 0.3s ease;
-    }
-
-    .section.open .arrow {
-      transform: rotate(90deg);
+      padding-top: 10px;
+      padding-bottom: 16px;
     }
 
     table {
@@ -87,24 +89,39 @@
 
     th, td {
       padding: 10px;
-      text-align: left;
       border-bottom: 1px solid #1c1c1c;
+      font-size: 0.95em;
+    }
+
+    tr:nth-child(even) {
+      background-color: rgba(0, 255, 231, 0.05);
+    }
+
+    tr:hover {
+      background-color: rgba(0, 255, 231, 0.1);
     }
 
     button {
       background-color: rgba(0, 255, 231, 0.1);
       color: #00ffe7;
       border: 2px solid #00ffe7;
-      padding: 8px 14px;
-      margin: 6px 0;
+      padding: 10px 16px;
+      margin: 6px;
       cursor: pointer;
       font-size: 14px;
-      transition: 0.3s;
+      border-radius: 0;
+      transition: all 0.3s ease;
     }
 
     button:hover {
       background-color: rgba(0, 255, 231, 0.2);
+      border-color: #00ffe7;
       transform: translateY(-2px);
+    }
+
+    a {
+      color: #00ffe7;
+      text-decoration: none;
     }
 
     footer {
@@ -113,16 +130,16 @@
       padding: 15px;
       color: white;
       font-size: 0.9rem;
-      width: 100%;
+      width: 70%;
+      margin: 0 auto;
     }
   </style>
 </head>
 <body>
   <header>Srya-Verikava - Credit Page</header>
-
   <main>
     <div class="section">
-      <div class="section-header" onclick="toggleSection(this)">Credit <span class="arrow">▶</span></div>
+      <div class="section-header">Credit</div>
       <div class="section-content">
         <table>
           <tr><td><strong>Pengembang:</strong> SryAa Verikava</td><td><a href="https://github.com/sryaarf" target="_blank"><button>GitHub</button></a></td></tr>
@@ -133,7 +150,7 @@
     </div>
 
     <div class="section">
-      <div class="section-header" onclick="toggleSection(this)">Ucapan Terima Kasih <span class="arrow">▶</span></div>
+      <div class="section-header">Ucapan Terima Kasih</div>
       <div class="section-content">
         <table>
           <tr><td><strong>Kontributor & Pendukung:</strong></td></tr>
@@ -146,7 +163,7 @@
     </div>
 
     <div class="section">
-      <div class="section-header" onclick="toggleSection(this)">Inspirasi Konten <span class="arrow">▶</span></div>
+      <div class="section-header">Inspirasi Konten</div>
       <div class="section-content">
         <table>
           <tr><td>Galaxy Railways</td><td><a href="https://en.wikipedia.org/wiki/The_Galaxy_Railways" target="_blank"><button>Kunjungi</button></a></td></tr>
@@ -156,7 +173,7 @@
     </div>
 
     <div class="section">
-      <div class="section-header" onclick="toggleSection(this)">Kedudukan IPC <span class="arrow">▶</span></div>
+      <div class="section-header">Kedudukan IPC (Interastral Peace Corporation)</div>
       <div class="section-content">
         <table>
           <thead><tr><th>Kedudukan</th><th>Nama</th><th>Cabang</th></tr></thead>
@@ -173,7 +190,7 @@
     </div>
 
     <div class="section">
-      <div class="section-header" onclick="toggleSection(this)">Kontribusi <span class="arrow">▶</span></div>
+      <div class="section-header">Kontribusi</div>
       <div class="section-content">
         <table>
           <tr><td>Kirim Saran Mu di Server Discord</td><td><a href="https://discord.gg/yourserver" target="_blank"><button>Saran Karya Discord</button></a></td></tr>
@@ -182,7 +199,7 @@
       </div>
     </div>
 
-    <a href="/sryaarf-sites/"><button>Kembali ke Halaman Utama</button></a>
+    <a href="https://sryaarf.github.io/sryaa-verikava/"><button>Kembali ke Halaman Utama</button></a>
   </main>
 
   <footer>
@@ -190,10 +207,13 @@
   </footer>
 
   <script>
-    function toggleSection(element) {
-      const section = element.parentElement;
-      section.classList.toggle("open");
-    }
+    document.querySelectorAll('.section-header').forEach(header => {
+      header.addEventListener('click', () => {
+        header.classList.toggle('active');
+        const content = header.nextElementSibling;
+        content.classList.toggle('open');
+      });
+    });
   </script>
 </body>
 </html>
